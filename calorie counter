@@ -1,0 +1,43 @@
+def calculate_calories(food_calories):
+    while True:
+        food_name = input("Enter the name of the food (or 'done' to finish): ").lower()
+        if food_name == "done":
+            break
+        calories = int(input(f"Enter the calories for {food_name}: "))
+        food_calories[food_name] = calories
+        servings = float(input(f"Enter the number of servings of {food_name}: "))
+        total_calories += servings * calories
+    return total_calories
+
+def main():
+    print("Welcome to the Calorie Counter Program!")
+
+    # Dictionary to store food names and their respective calorie counts
+    food_calories = {}
+
+    intake_calories = calculate_calories(food_calories)
+    print(f"Total intake calories: {intake_calories}")
+
+    target_calories = int(input("Enter your target calorie intake for the day: "))
+
+    if target_calories < intake_calories:
+        print("Your intake calories exceed your target. You may consider:")
+        print("- Reducing portion sizes")
+        print("- Including more fruits and vegetables")
+        print("- Adding low-calorie snacks")
+        print("\nFor a workout plan, you can consider:")
+        print("- Cardio exercises such as running, cycling, or swimming for at least 30 minutes a day.")
+        print("- Incorporating strength training exercises to maintain muscle mass.")
+    elif target_calories > intake_calories:
+        print("Your intake calories are less than your target. You may consider:")
+        print("- Adding healthy snacks between meals")
+        print("- Increasing portion sizes")
+        print("- Including calorie-dense foods like nuts, avocado, etc.")
+        print("\nFor a workout plan, you can consider:")
+        print("- Strength training exercises to build muscle mass, such as weightlifting or bodyweight exercises.")
+        print("- Consuming protein-rich foods to support muscle growth.")
+    else:
+        print("Your intake calories match your target. Well done!")
+
+if __name__ == "__main__":
+    main()
