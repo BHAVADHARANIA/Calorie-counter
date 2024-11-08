@@ -1,0 +1,1 @@
+A calorie counter using Python can help users track their diet and activities to manage their weight. It can estimate the minimum number of calories a user needs based on the information they provide. The system can also calculate the calories consumed from the food a user selects from a database, and suggest a dietary plan.
